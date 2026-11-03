@@ -188,6 +188,11 @@ section{scroll-margin-top:72px}
 .route:nth-child(2),.route:nth-child(3){grid-column:span 2}
 .route::after{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .3s;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%), color-mix(in srgb, var(--hero-arc) 30%, transparent), transparent 62%)}
 .route:hover::after{opacity:1}
+.route::after{background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), color-mix(in srgb, var(--hero-arc) 38%, transparent), transparent 60%)}
+.route::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;pointer-events:none;z-index:2;opacity:0;transition:opacity .3s;background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%), var(--hero-arc), color-mix(in srgb, var(--hero-arc) 35%, transparent) 45%, transparent 70%);-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0)}
+.route:hover::before{opacity:1}
+.route:hover{box-shadow:0 0 0 1px color-mix(in srgb, var(--hero-arc) 55%, transparent), 0 0 40px -6px color-mix(in srgb, var(--hero-arc) 45%, transparent), 0 30px 60px -30px rgba(5,11,40,.6)}
+.route:hover svg.glyph{color:var(--hero-arc);opacity:1}
 .route:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(20,20,60,.55)}
 .route .mono{color:var(--blue);transition:color .35s}
 .route h3{font-size:clamp(40px,4.6vw,60px);line-height:1;margin:14px 0 16px}
@@ -315,6 +320,8 @@ footer{background:var(--paper);padding-block:64px 32px;overflow:hidden}
 /* profile card on click */
 .member{cursor:pointer}
 .pm{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px max(16px, env(safe-area-inset-right,0px)) 24px max(16px, env(safe-area-inset-left,0px));background:color-mix(in srgb, #050B1E 55%, transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;transition:opacity .25s}
+.pm[hidden]{display:none!important}
+.pm:not(.open){pointer-events:none}
 .pm.open{opacity:1}
 .pm-card{position:relative;width:min(680px,100%);max-height:calc(100vh - 48px);overflow:auto;background:var(--paper);color:var(--ink);border-radius:20px;box-shadow:0 40px 80px -30px rgba(5,11,40,.6);display:grid;grid-template-columns:240px minmax(0,1fr);gap:28px;align-items:start;padding:28px;transform:translateY(16px) scale(.97);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .pm.open .pm-card{transform:none}
